@@ -1,0 +1,19 @@
+@font-face{
+    font-family: "LTAmber-Regular";
+    src: url('../fonts/LTAmber-Regular.ttf');
+  }
+
+  @font-face{
+    font-family: "LTAmber-Medium";
+    src: url('../fonts/LTAmber-Medium.ttf');
+  }
+
+  @font-face{
+    font-family: "LTAmber-Bold";
+    src: url('../fonts/LTAmber-Bold.ttf');
+  }
+
+  @font-face{
+    font-family: "Brumery";
+    src: url('../fonts/Brumery Demo.ttf');
+  }
