@@ -1,6 +1,14 @@
 import LogoEquiX from '../img/LogoEquiX.png';
+import { useTranslation, Trans } from 'react-i18next';
+
+const lngs = {
+    es: {nativeName: 'Español'},
+    en: {nativeName: 'English'}
+  }
 
 const Navbar = () => {
+
+    const {t, i18n} = useTranslation()
 
     return (  
         <nav className="navbar">
@@ -8,17 +16,22 @@ const Navbar = () => {
             <div className="links">
                 <ul>
                     <li>
-                        <a href="/about/"> Sobre mí</a>
+                    <Trans className='translate' i18nKey= 'gallery_trans'>
+                        <a href="/" > Galería</a>
+                    </Trans>
                     </li>
                     <li>
-                        <a href="/experience/"> Experiencia</a>
+                    <Trans className='translate' i18nKey= 'contact_trans'>
+                        <a href="/Contact"> Contacto</a>
+                    </Trans>
                     </li>
                     <li>
-                        <a href="/services/"> Servicios</a>
-                    </li> 
-                    <li>
-                        <a href="/contact/"> Contacto</a>
-                    </li>                                                                    
+                        {Object.keys(lngs).map((lng) => (
+                        <button type='submit' key={lng} onClick={() => i18n.changeLanguage(lng)} 
+                        disabled={i18n.resolvedLanguage === lng}> {lngs[lng].nativeName}                
+                        </button>
+                        ))}  
+                    </li>                                                                   
                 </ul>
             </div>
         </nav>
